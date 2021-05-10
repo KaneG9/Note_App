@@ -1,4 +1,4 @@
-var assert = {
+let assert = {
   isTrue: function(description, assertionToCheck) {
     if (assertionToCheck) {
       console.log(description + " Assertion passed: " + assertionToCheck + " is truthy");
@@ -30,3 +30,11 @@ var assert = {
     }
   }
 };
+
+function createDouble(doubleName, methods) {
+  let tempObject = {
+   name: doubleName
+  }
+  methods.forEach(method => tempObject[method] = null);
+  return tempObject;
+}
