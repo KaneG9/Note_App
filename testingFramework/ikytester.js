@@ -1,19 +1,21 @@
+"use strict";
+
 let assert = {
-  isTrue: function(description, assertionToCheck) {
+  toBeTrue: function(description, assertionToCheck) {
     if (assertionToCheck) {
       console.log(description + " Assertion passed: " + assertionToCheck + " is truthy");
     } else {
       console.log(description + " Assertion failed: " + assertionToCheck + " is falsey");
     }
   },
-  isEqual: function(description, actual, expected) {
+  toEqual: function(description, actual, expected) {
     if (actual === expected) {
       console.log(description + " Assertion passed: " + actual + " matched " + expected);
     } else {
       console.log(description + " Assertion failed: " + actual + " did not match " + expected);
     }
   },
-  throwsError: function(description, codeToCheck, expectedErrorThrown) {
+  toThrowError: function(description, codeToCheck, expectedErrorThrown) {
     let errorCaught = false
     try {
       codeToCheck()
@@ -30,12 +32,30 @@ let assert = {
     }
   },
   toInclude: function(description, actual, expected) {
-    if (actual.forEach()) {
+    if (actual.includes(expected)) {
       console.log(description + " Assertion passed: " + actual + " includes " + expected);
     } else {
       console.log(description + " Assertion failed: " + actual + "  does not include " + expected)
     }
-  }
+  },
+  
+  toIncludeNestedArray: (function(description, actual, expected) {
+    let matchArr = false
+    actual.forEach(function(nestedArr) {
+      let matchEl = true
+      for (var i = 0; i < nestedArr.length; ++i) {
+        if (nestedArr[i] !== expected[i]) {
+        matchEl = false 
+        }
+      }
+      if(matchEl) {matchArr = true}
+    })
+    if (matchArr) {
+      console.log(description + " Assertion passed: " + actual + " includes " + expected);
+    } else {
+      console.log(description + " Assertion failed: " + actual + "  does not include " + expected)
+    }
+  })
 };
 
 function createDouble(doubleName, methods) {
@@ -45,3 +65,4 @@ function createDouble(doubleName, methods) {
   methods.forEach(method => tempObject[method] = null);
   return tempObject;
 }
+
