@@ -1,11 +1,6 @@
-// class Note {
-//   constructor() {
-//     this.arr = [];
-//   }
-//   add(note) {
-//     this.arr.push(note)
-//   }
-//   test() {
-//     return this.arr;
-//   }
-// }
+class Note {
+  constructor(id, content) {
+    this.id = id
+    this.content = content
+  }
+}
