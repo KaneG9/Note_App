@@ -12,3 +12,7 @@ let circle = new Circle();
   let bikeDouble = createDouble('bike', ['ride', 'isWorking']);
   assert.isEqual('description', bikeDouble.ride, null)
 })();
+
+(function() {
+  assert.toInclude('description', circle.dog(), 'cat')
+})();

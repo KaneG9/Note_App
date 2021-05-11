@@ -28,6 +28,13 @@ let assert = {
     if (errorCaught === false) {
       console.log(description + " Assertion failed: NO ERROR");
     }
+  },
+  toInclude: function(description, actual, expected) {
+    if (actual.includes(expected)) {
+      console.log(description + " Assertion passed: " + actual + " include " + expected);
+    } else {
+      console.log(description + " Assertion failed: " + actual + "  does not include " + expected)
+    }
   }
 };
 
