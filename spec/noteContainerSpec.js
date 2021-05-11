@@ -11,4 +11,4 @@
   noteContainter.create('Something even more interesting')
   assert.isEqual('creates note with unique ids', noteContainter.notes[0].id, 1)
   assert.isEqual('creates second note with unique ids', noteContainter.notes[1].id, 2)
-})()
+})();
