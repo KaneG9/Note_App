@@ -31,7 +31,7 @@ let assert = {
   },
   toInclude: function(description, actual, expected) {
     if (actual.includes(expected)) {
-      console.log(description + " Assertion passed: " + actual + " include " + expected);
+      console.log(description + " Assertion passed: " + actual + " includes " + expected);
     } else {
       console.log(description + " Assertion failed: " + actual + "  does not include " + expected)
     }

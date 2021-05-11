@@ -14,5 +14,6 @@ let circle = new Circle();
 })();
 
 (function() {
-  assert.toInclude('description', circle.dog(), 'cat')
+  circle.cat()
+  assert.toInclude('description', circle.arr, 'cat')
 })();

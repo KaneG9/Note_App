@@ -5,9 +5,10 @@ class Circle {
   }
 
   dog() {
-    this.arr.push('cat')
-    return this.arr
     throw new Error('dfs')
     return 'woof!'
+  }
+  cat() {
+    this.arr.push('cat')
   }
 }
