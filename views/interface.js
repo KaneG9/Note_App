@@ -28,4 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('#note_display').style.display = 'none'
     }
   })
+
+  document.querySelector('#note_display').addEventListener('submit', (event) => {
+    event.preventDefault()
+    document.querySelector('#main_page_display').style.display = 'block'
+    document.querySelector('#note_display').style.display = 'none'
+    // window.location.href = window.location.href.split('#')[0]
+    history.replaceState(null, null, ' ');
+  })
 })
