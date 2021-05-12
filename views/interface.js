@@ -10,5 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var textnode = document.createTextNode(noteTitle);
     node.appendChild(textnode);
     document.getElementById('saved_notes_list').appendChild(node);
+    document.getElementById('new_note_text_box').value = null
   })
 })
