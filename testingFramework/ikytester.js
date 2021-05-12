@@ -58,11 +58,24 @@ let assert = {
   })
 };
 
+// function createDouble(doubleName, methods) {
+//   let tempObject = function() {
+//    this.name = doubleName
+//   }
+//   methods.forEach(method => tempObject[method] = null);
+//   return tempObject;
+// }
+
 function createDouble(doubleName, methods) {
-  let tempObject = {
-   name: doubleName
+  let x = doubleName
+  class TempClass {
+    constructor(x) {
+      this.name = doubleName
+    }
   }
-  methods.forEach(method => tempObject[method] = null);
-  return tempObject;
+  methods.forEach(method => {
+    TempClass.prototype.method = function() {null}  
+  })
+  return TempClass
 }
 
