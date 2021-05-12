@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('#new_note_form').addEventListener('submit', (event) => {
     event.preventDefault()
-    let content = document.querySelector('#new_note_text_box').value
-    let noteId = noteContainer.create(content)
+    let content = document.querySelector('#new_note_text_box')
+    let noteId = noteContainer.create(content.value)
     let noteTitle = noteContainer.getTitleById(noteId)
     let listNode = document.createElement('li');
     let linkNode = document.createElement('a')
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     linkNode.innerText = noteTitle
     listNode.appendChild(linkNode)
     document.getElementById('saved_notes_list').appendChild(listNode);
-    document.getElementById('new_note_text_box').value = null
+    content.value = null
   })
 
   window.addEventListener('hashchange', () => {
@@ -20,20 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if(url.length > 1) {
       let noteId = url[1]
       let noteContent = noteContainer.getContentById(parseInt(noteId))
-      document.querySelector('#main_page_display').style.display = 'none'
-      document.querySelector('#note_display').style.display = 'block'
+      showNotePage()
       document.querySelector('#note_display_content').innerText = noteContent
     } else {
-      document.querySelector('#main_page_display').style.display = 'block'
-      document.querySelector('#note_display').style.display = 'none'
+      hideNotePage()
     }
   })
 
   document.querySelector('#note_display').addEventListener('submit', (event) => {
     event.preventDefault()
-    document.querySelector('#main_page_display').style.display = 'block'
-    document.querySelector('#note_display').style.display = 'none'
-    // window.location.href = window.location.href.split('#')[0]
+    hideNotePage()
     history.replaceState(null, null, ' ');
   })
 })
+
+function showNotePage() {
+  document.querySelector('#main_page_display').style.display = 'none'
+  document.querySelector('#note_display').style.display = 'block'
+}
+
+function hideNotePage() {
+  document.querySelector('#main_page_display').style.display = 'block'
+  document.querySelector('#note_display').style.display = 'none'
+}
