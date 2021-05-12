@@ -9,13 +9,18 @@ class NoteContainer {
     let note = new this.noteClass(this.idCounter, content)
     this.notes.push(note)
     this.idCounter++
+    return note.id
   }
 
-  titleWithId() {
+  listTitleWithId() {
     return this.notes.map((note) => [note.id, note.title()])
   }
 
-  read(id) {
+  getContentById(id) {
     return this.notes.filter(el => el.id === id)[0].content
+  }
+
+  getTitleById(id) {
+    return this.notes.filter(el => el.id === id)[0].title()
   }
 }

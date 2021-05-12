@@ -7,22 +7,23 @@
   <title>Noteworthy</title>
   <script src="../src/note.js"></script>
   <script src="../src/noteContainer.js"></script>
+  <script src='../views/interface.js'></script>
   <link rel="stylesheet" href="../css/stylesheet.css">
 </head>
 <body>
   <h1 id='title'>Noteworthy</h1>
   <div id='main_page_display'>
     <div id='new_note_box'>
-      <textarea placeholder="Enter Something Noteworthy📝!" cols="30" rows="5"></textarea></body>
       <form id='new_note_form' action="">
-        <input id= 'submit_button' type="submit" value='Create Note'>
+        <textarea id='new_note_text_box' placeholder="Enter Something Noteworthy📝!" cols="30" rows="5"></textarea>
+        <input id='submit_button' type="submit" value='Create Note'>
       </form>
     </div>
     <div id='saved_notes_box'>
       <h3>Saved Notes</h3>
       <ul id='saved_notes_list'>
-
       </ul>
     </div>
   </div>
-  </html>
+</body>
+</html>
