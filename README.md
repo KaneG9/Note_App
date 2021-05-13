@@ -20,16 +20,25 @@ Open http://localhost:8080/ in browser. Now add some Noteworthy notes!
 <details>
 <summary>User Stories</summary>
 As a programmer
-I can see a list of my notes, where each note is abbreviated to the first 20 characters
 So I can find the one I want
+I can see a list of my notes, where each note is abbreviated to the first 20 characters
 
 As a programmer
-I can create a new note
 So I can record something I need to remember
+I can create a new note
 
- As a programmer
-I can see the full text of an individual note on its own page
+As a programmer
 So I can see all the information in the note
+I can see the full text of an individual note on its own page
+
+As a programmer
+So I can record notes with fun little pictures
+I can use shortcodes like `:fire:` that get converted into emojis like 🔥
+
+As a programmer
+So I can remember what I took down
+I can refresh the page and still see my notes
+
 </details>  
 
 * We begun be creating a testing framework (see [Testing](#Testing))
@@ -43,7 +52,12 @@ So I can see all the information in the note
   * Adds new notes to our list
   * Displays content of a note when clicked on
   * Returns to main page with back button
-
+* Created local storage so notes are not lost on page refresh
+  * Note container is stored using JSON.stringify()
+  * The container is retrieved using JSON.parse() then the class object is rebuild from the result along with the note class objects
+  * The container is loaded and saved after every action
+* Added emojification to webpage
+  * Web page converts emoji codes to emojis using the [emojify API](https://makers-emojify.herokuapp.com/) (API is slightly broken)
 ## Testing
 
 We created a new testing framework with the following matchers:
@@ -67,7 +81,8 @@ When run our tests return results in the console of the specRunner.html page. Th
 ## Improvements
 
 * Doubles in testing environment
-* ...
+* FIX API
+* 
 
 
 
