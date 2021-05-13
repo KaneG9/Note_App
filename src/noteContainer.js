@@ -1,8 +1,8 @@
 class NoteContainer {
-  constructor(noteClass = Note) {
+  constructor(notes = [], idCounter = 1, noteClass = Note) {
     this.noteClass = noteClass
-    this.notes = []
-    this.idCounter = 1
+    this.notes = notes
+    this.idCounter = idCounter
   }
 
   create(content) {
