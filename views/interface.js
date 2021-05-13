@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
     event.preventDefault()
     noteContainer = loadFromLocalStorage();
     let content = document.querySelector('#new_note_text_box')
-    noteContainer.create(content.value)
-    createLinks(noteContainer);
+    emojify(content.value).then((noteContentEmoji) => {
+      noteContainer.create(noteContentEmoji)
+      createLinks(noteContainer);
+      saveToLocalStorage(noteContainer);
+    })
     content.value = null
-    saveToLocalStorage(noteContainer);
   })
 
   window.addEventListener('hashchange', () => {
@@ -82,4 +84,18 @@ function createLinks(container) {
     listNode.appendChild(linkNode)
     document.getElementById('saved_notes_list').appendChild(listNode);
   });
+}
+
+async function emojify(content) {
+  const rawResponse = await fetch('https://makers-emojify.herokuapp.com/', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({"text": content})
+  });
+  let emojifiedContent = await rawResponse.json();
+  let response = await emojifiedContent
+  return response.emojified_text
 }
