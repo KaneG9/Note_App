@@ -4,7 +4,8 @@ class Note {
     this.content = content
   }
   title() {
-    return this.content.substring(0, 20);
+    let flatContent = this.content.replaceAll('\n', '⏎')
+    return flatContent.substring(0, 20);
   }
   get read() {
     return this.content

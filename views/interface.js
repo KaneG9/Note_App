@@ -2,11 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let noteContainer;
 
   if (localStorage.getItem("noteContainer") === null ) {
-    console.log('string');
     noteContainer = new NoteContainer
     saveToLocalStorage(noteContainer);
   } else {
-    console.log('another string else ');
     noteContainer = loadFromLocalStorage();
   }
 
@@ -52,20 +50,24 @@ function hideNotePage() {
   document.querySelector('#main_page_display').style.display = 'block'
   document.querySelector('#note_display').style.display = 'none'
 }
+
 function saveToLocalStorage(value) {
-  console.log(JSON.stringify(value));
   localStorage.setItem("noteContainer", JSON.stringify(value));
 }
 
 function loadFromLocalStorage() {
   const loadedContainer = localStorage.getItem("noteContainer");
-  console.log(JSON.parse(loadedContainer));
-  console.log(loadedContainer);
   const loadedData = JSON.parse(loadedContainer);
-  let noteContainer = new NoteContainer(loadedData.notes, loadedData.idCounter);
-  // console.log(noteContainer, 'testing string')
+  let noteContainer = new NoteContainer();
+  createNotesFromJSON(noteContainer, loadedData.notes);
   createLinks(noteContainer);
-  return noteContainer
+  return noteContainer;
+}
+
+function createNotesFromJSON(noteContainer, notes) {
+  notes.forEach(note => {
+    noteContainer.create(note.content);
+  })
 }
 
 function createLinks(container) {
@@ -74,7 +76,7 @@ function createLinks(container) {
     let listNode = document.createElement('li');
     let linkNode = document.createElement('a');
     let noteId = note.id;
-    let noteTitle = note.content.substring(0, 20);
+    let noteTitle = note.title();
     linkNode.setAttribute('href', `#${noteId}`)
     linkNode.innerText = noteTitle
     listNode.appendChild(linkNode)
