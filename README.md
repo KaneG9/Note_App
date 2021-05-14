@@ -19,27 +19,27 @@ Open http://localhost:8080/ in browser. Now add some Noteworthy notes!
 
 <details>
 <summary>User Stories</summary>
-```
-As a programmer
-So I can find the one I want
+
+As a programmer <br>
+So I can find the one I want <br>
 I can see a list of my notes, where each note is abbreviated to the first 20 characters
 
-As a programmer
-So I can record something I need to remember
+As a programmer <br>
+So I can record something I need to remember<br>
 I can create a new note
 
-As a programmer
-So I can see all the information in the note
+As a programmer<br>
+So I can see all the information in the note<br>
 I can see the full text of an individual note on its own page
 
-As a programmer
-So I can record notes with fun little pictures
+As a programmer<br>
+So I can record notes with fun little pictures<br>
 I can use shortcodes like `:fire:` that get converted into emojis like 🔥
 
-As a programmer
-So I can remember what I took down
+As a programmer<br>
+So I can remember what I took down<br>
 I can refresh the page and still see my notes
-```
+
 </details>  
 
 * We begun be creating a testing framework (see [Testing](#Testing))
