@@ -1,3 +1,137 @@
+/* pallette https://coolors.co/eae4e9-fff1e6-fde2e4-fad2e1-e2ece9-bee1e6-f0efeb-dfe7fd-cddafd */
+
+body {
+  padding-bottom: 20px;
+  background-image: url('https://www.wallpapertip.com/wmimgs/43-432607_blackboard-wallpaper-hd.jpg');
+  font-family: 'monaco', monospace;
+  text-align: center;
+  overflow: auto;
+}
+
+#title {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size:5em;
+  font:bold 7.5vw/1.6 'Signika', sans-serif;
+  user-select:none;
+  text-align: center;
+ }
+ 
+ h1 span { display:inline-block; animation:float 1s ease-in-out infinite; }
+  @keyframes float {
+   0%,100%{ transform:none; }
+   33%{ transform:translateY(-10px) rotate(-2deg); }
+   66%{ transform:translateY(10px) rotate(2deg); }
+ }
+ h1:hover span { animation:bounce 2s; }
+ @keyframes bounce {
+   0%,100%{ transform:translate(0); }
+   25%{ transform:rotateX(3deg) translateY(20px); }
+   50%{ transform:translateY(-50px) scale(1.1);  }
+ }
+ 
+ span:nth-child(3n) { color:hsl(57, 100%, 63%); text-shadow:1px 1px hsl(57, 100%, 43%), 2px 2px hsl(57, 100%, 43%), 3px 3px hsl(57, 100%, 43%), 4px 4px hsl(57, 100%, 43%); }
+ span:nth-child(3n-1) { color:hsl(336, 100%, 70%); text-shadow:1px 1px hsl(336, 100%, 60%), 2px 2px hsl(336, 100%, 60%), 3px 3px hsl(336, 100%, 60%), 4px 4px hsl(336, 100%, 60%); }
+ span:nth-child(3n-2) { color:hsl(181, 100%, 74%); text-shadow:1px 1px hsl(181, 100%, 55%), 2px 2px hsl(181, 100%, 55%), 3px 3px hsl(181, 100%, 55%), 4px 4px hsl(181, 100%, 55%); }
+
+ h1 span:nth-child(2){ animation-delay: 0.1s; }
+ h1 span:nth-child(3){ animation-delay:.2s; }
+ h1 span:nth-child(4){ animation-delay:.3s; }
+ h1 span:nth-child(5){ animation-delay:.4s; }
+ h1 span:nth-child(6){ animation-delay:.5s; }
+ h1 span:nth-child(7){ animation-delay:.6s; }
+ h1 span:nth-child(8){ animation-delay:.7s; }
+ h1 span:nth-child(9){ animation-delay:.8s; }
+ h1 span:nth-child(10){ animation-delay:.9s; }
+
+#new_note_box {
+  background-color: #caebf2;
+  padding: 20px;
+  width: 400px;
+  height: 260px;
+  margin: auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  overflow: auto;
+  opacity: 0.8;
+}
+
 textarea {
   resize: none;
+  height: 150px;
+  width: 300px;
+  margin-top: 20px;
+  font-family: 'monaco', monospace;
 }
+
+#submit_button {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #efefef;
+  background-color: #ff3b3f;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 35px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'monaco', monospace;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  overflow: auto;
+}
+
+#saved_notes_box {
+  background-color: #caebf2;
+  padding: 20px;
+  padding-top: 5px;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  opacity: 0.8;
+  position:relative;
+  overflow: auto;
+}
+
+#note_display_box {
+  background-color: #caebf2;
+  padding: 20px;
+  padding-top: 5px;
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  opacity: 0.8;
+  position:relative;
+  overflow: auto;
+}
+
+#note_display_back_button {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #efefef;
+  background-color: #ff3b3f;
+  border: 0;
+  padding-left: 40px;
+  padding-right: 35px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'monaco', monospace;
+  margin: auto;
+  margin-top: 30px;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+
+

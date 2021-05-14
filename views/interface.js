@@ -75,7 +75,7 @@ function createNotesFromJSON(noteContainer, notes) {
 function createLinks(container) {
   document.querySelector('#saved_notes_list').innerHTML = "";
   container.notes.forEach(note => {  
-    let listNode = document.createElement('li');
+    let listNode = document.createElement('p');
     let linkNode = document.createElement('a');
     let noteId = note.id;
     let noteTitle = note.title();

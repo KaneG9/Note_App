@@ -11,27 +11,41 @@
   <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 <body>
-  <h1 id='title'>Noteworthy</h1>
+  <h1 id='title'>
+    <span>N</span>
+    <span>O</span>
+    <span>T</span>
+    <span>E</span>
+    <span>W</span>
+    <span>O</span>
+    <span>R</span>
+    <span>T</span>
+    <span>H</span>
+    <span>Y</span>
+  </h1>
   <div id='main_page_display'>
     <div id='new_note_box'>
       <form id='new_note_form' action="">
-        <textarea id='new_note_text_box' placeholder="Enter Something Noteworthy📝!" cols="30" rows="5"></textarea>
+        <textarea id='new_note_text_box' placeholder="Enter Something Noteworthy📝!" cols="30" rows="5"></textarea> 
+        <br>
         <input id='submit_button' type="submit" value='Create Note'>
       </form>
     </div>
     <div id='saved_notes_box'>
-      <h3>Saved Notes</h3>
-      <ul id='saved_notes_list'>
+      <h3 id='saved_notes_title'>Saved Notes</h3>
+      <div id='saved_notes_list'>
         <!-- interface inserts saved notes here -->
-      </ul>
+      </div>
     </div>
   </div>
   <div id='note_display' style="display:none">
-    <p id='note_display_content'>
-      <!-- interface inserts note content here -->
-    </p>
+    <div id='note_display_box'>
+      <p id='note_display_content'>
+        <!-- interface inserts note content here -->
+      </p>
+    </div>
     <form action=''>
-      <input type='submit' value='Back to notes'>
+      <input id='note_display_back_button' type='submit' value='Back to notes'>
     </form>
   </div>
 </body>
