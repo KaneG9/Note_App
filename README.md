@@ -82,8 +82,7 @@ When run our tests return results in the console of the specRunner.html page. Th
 ## Improvements
 
 * Doubles in testing environment
-* FIX API
-* 
+* Deploy the progam
 
 
 
