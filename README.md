@@ -58,7 +58,7 @@ I can refresh the page and still see my notes
   * The container is retrieved using JSON.parse() then the class object is rebuild from the result along with the note class objects
   * The container is loaded and saved after every action
 * Added emojification to webpage
-  * Web page converts emoji codes to emojis using the [emojify API](https://makers-emojify.herokuapp.com/) (API is slightly broken)
+  * Web page converts emoji codes to emojis using the [emojify API](https://makers-emojify.herokuapp.com/)
 ## Testing
 
 We created a new testing framework with the following matchers:
