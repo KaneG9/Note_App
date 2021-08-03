@@ -82,6 +82,8 @@ When run our tests return results in the console of the specRunner.html page. Th
 ## Improvements
 
 * Doubles in testing environment
+* Delete Notes
+* Clear testing interface
 * Deploy the progam
 
 
